@@ -39,7 +39,7 @@ public:
 
 	string GetFirstName()
 	{
-		return _LastName;
+		return _FirstName;
 	}
 
 	__declspec(property(get = GetFirstName, put = SetFirstName)) string FirstName;

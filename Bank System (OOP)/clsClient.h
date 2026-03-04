@@ -31,6 +31,21 @@ private:
 		return clsClient(enMode::UpdateMode, sClient[0], sClient[1], sClient[2], sClient[3], sClient[4], sClient[5], stod(sClient[6]));
 	}
 
+	static string _ConvertClientObjectToLine(clsClient Client, string Seperator = "//")
+	{
+		string sClient = "";
+
+		sClient += Client.FirstName + Seperator;
+		sClient += Client.LastName + Seperator;
+		sClient += Client.Email + Seperator;
+		sClient += Client.Phone + Seperator;
+		sClient += Client.AccountNumber() + Seperator;
+		sClient += Client.PinCode + Seperator;
+		sClient += to_string(Client.Balance);
+
+		return sClient;
+	}
+
 	static vector <clsClient> _LoadClientsFromFile(string FileName)
 	{
 		vector <clsClient> Clients;
@@ -57,6 +72,42 @@ private:
 	static clsClient _GetEmptyClientObject()
 	{
 		return clsClient(enMode::EmptyMode, "", "", "", "", "", "", 0);
+	}
+
+	static bool _SaveClientsToFile(string FileName, vector <clsClient> Clients)
+	{
+		fstream File;
+		File.open(FileName, ios::out);
+
+		if (!File.is_open())
+			return false;
+
+		string Line = "";
+
+		for (clsClient& C : Clients)
+		{
+			Line = _ConvertClientObjectToLine(C);
+			File << Line << endl;
+		}
+
+		File.close();
+		return true;
+	}
+
+	bool _Update()
+	{
+		vector <clsClient> Clients = _LoadClientsFromFile("Clients.txt");
+
+		for (clsClient& C : Clients)
+		{
+			if (C.AccountNumber() == AccountNumber())
+			{
+				C = *this;
+				return _SaveClientsToFile("Clients.txt", Clients);
+			}
+		}
+
+		return false;
 	}
 
 public:
@@ -180,7 +231,7 @@ public:
 	void Print()
 	{
 		cout << "\nClient Card:";
-		cout << "\n___________________";
+		cout << "\n____________________________________";
 		cout << "\nFirstName   : " << FirstName;
 		cout << "\nLastName    : " << LastName;
 		cout << "\nFull Name   : " << FullName();
@@ -189,7 +240,18 @@ public:
 		cout << "\nAcc. Number : " << AccountNumber();
 		cout << "\nPassword    : " << PinCode;
 		cout << "\nBalance     : " << Balance;
-		cout << "\n___________________\n";
+		cout << "\n____________________________________\n";
 	}
 
+	bool Save()
+	{
+		switch (_Mode)
+		{
+			case enMode::UpdateMode:
+			{
+				return _Update();
+				break;
+			}
+		}
+	}
 };

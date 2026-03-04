@@ -139,7 +139,6 @@ public:
         }
     }
 
-
     static string Tabs(short NumberOfTabs)
     {
         string t = "";
