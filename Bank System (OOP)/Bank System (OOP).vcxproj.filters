@@ -13,10 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Classes">
+      <UniqueIdentifier>{b31dc7e2-05ca-4da7-a71e-073686ce2626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Screens">
+      <UniqueIdentifier>{90e4dfff-740b-4cc7-8aa7-7aa1f3134dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Libraries">
+      <UniqueIdentifier>{db2537be-ec92-4198-a712-e0a2cf13db2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsInputValidate.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsPeriod.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsString.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsUtility.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsDate.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

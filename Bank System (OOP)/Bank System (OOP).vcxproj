@@ -129,6 +129,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsDate.h" />
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsInputValidate.h" />
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsPeriod.h" />
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsString.h" />
+    <ClInclude Include="..\..\Libraries\C++ Utility Libraries Collection\clsUtility.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
