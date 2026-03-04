@@ -74,7 +74,7 @@ private:
 		return clsClient(enMode::EmptyMode, "", "", "", "", "", "", 0);
 	}
 
-	static bool _SaveClientsToFile(string FileName, vector <clsClient> Clients)
+	static bool _SaveClientsToFile(string FileName, vector <clsClient>& Clients)
 	{
 		fstream File;
 		File.open(FileName, ios::out);
@@ -94,6 +94,21 @@ private:
 		return true;
 	}
 
+	bool _SaveClientObjectToFile(clsClient& Client)
+	{
+		fstream File;
+		File.open("Clients.txt", ios::out | ios::app);
+
+		if (!File.is_open())
+			return false;
+
+		string Line = _ConvertClientObjectToLine(Client);
+		File << Line << endl;
+
+		File.close();
+		return true;
+	}
+
 	bool _Update()
 	{
 		vector <clsClient> Clients = _LoadClientsFromFile("Clients.txt");
@@ -108,6 +123,11 @@ private:
 		}
 
 		return false;
+	}
+	
+	bool _AddNew()
+	{
+		return _SaveClientObjectToFile(*this);
 	}
 
 public:
@@ -228,6 +248,11 @@ public:
 		return !(Client.IsEmpty());
 	}
 
+	static clsClient GetAddNewClientObject(string AccountNumber)
+	{
+		return clsClient(enMode::AddNewMode, "", "", "", "", AccountNumber, "", 0);
+	}
+
 	void Print()
 	{
 		cout << "\nClient Card:";
@@ -252,6 +277,27 @@ public:
 				return _Update();
 				break;
 			}
+
+			case enMode::AddNewMode:
+			{
+				if (IsClientExist(AccountNumber()))
+					return false;
+				else
+					return _AddNew();
+
+				break;
+			}
+
+			case enMode::EmptyMode:
+			{
+				if (IsEmpty())
+					return false;
+				
+				break;
+			}
+
+			default:
+				return false;
 		}
 	}
 };

@@ -6,7 +6,7 @@ using namespace std;
 
 void ReadClientInfo(clsClient& Client)
 {
-	cout << "Enter First Name: ";
+	cout << "\nEnter First Name: ";
 	Client.FirstName = clsInputValidate::ReadString();
 
 	cout << "Enter Last Name: ";
@@ -45,19 +45,45 @@ void UpdateClient()
 
 	if (Client.Save())
 	{
+		cout << "\nClient Updated Successfully :-)\n";
+		Client.Print();
+	}
+
+	else
+	{
+		cout << "\nError Account Was Not Saved :-(\n";
+	}
+}
+
+void AddNewClient()
+{
+	cout << "Enter Account Number: ";
+	string AccountNumber = clsInputValidate::ReadString();
+
+	while (clsClient::IsClientExist(AccountNumber))
+	{
+		cout << "Account Number Is Already Used, Choose Another One: ";
+		AccountNumber = clsInputValidate::ReadString();
+	}
+
+	clsClient Client = clsClient::GetAddNewClientObject(AccountNumber);
+	ReadClientInfo(Client);
+
+	if (Client.Save())
+	{
 		cout << "\nClient Added Successfully :-)\n";
 		Client.Print();
 	}
 
 	else
 	{
-		cout << "Error Account Was Not Saved :-(\n";
+		cout << "\nError Account Was Not Saved :-(\n";
 	}
 }
 
 int main()
 {
-	UpdateClient();
+	AddNewClient();
 
 	system("pause>0");
 
