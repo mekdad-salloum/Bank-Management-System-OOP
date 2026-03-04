@@ -10,6 +10,4 @@ Mohammed//Abu-Hadhoud//msaqer@gmail.com//199192//A101//1234//901.000000
 Ali//Ali//Ali@al.com//83837//A112//1234//5000.000000
 Hamed//Omar//Om@g.com//37732//A500//1234//1221.000000
 Amera//Saed//amera@gmail.com//09876//A1//1234//6000.000000
-Mekdad//Salloum//mekdad@gmail.com//09876//A2//1234//9000.000000
 Rahaf//Salloum//rahaf@gmail.com//09876//A12//1234//5300.000000
-Amera//Saed//amera@gmail.com//098765//A11//1234//3000.000000

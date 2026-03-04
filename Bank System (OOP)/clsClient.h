@@ -21,7 +21,7 @@ private:
 	string _AccountNumber;
 	string _PinCode;
 	double _Balance;
-
+	bool _MarkForDelete = false;
 	
 	static clsClient _ConvertLineToClientObject(string Line, string Seperator = "//")
 	{
@@ -46,11 +46,11 @@ private:
 		return sClient;
 	}
 
-	static vector <clsClient> _LoadClientsFromFile(string FileName)
+	static vector <clsClient> _LoadClientsFromFile()
 	{
 		vector <clsClient> Clients;
 		fstream File;
-		File.open(FileName, ios::in);
+		File.open("Clients.txt", ios::in);
 
 		if (File.is_open())
 		{
@@ -74,10 +74,10 @@ private:
 		return clsClient(enMode::EmptyMode, "", "", "", "", "", "", 0);
 	}
 
-	static bool _SaveClientsToFile(string FileName, vector <clsClient>& Clients)
+	static bool _SaveClientsToFile(vector <clsClient>& Clients)
 	{
 		fstream File;
-		File.open(FileName, ios::out);
+		File.open("Clients.txt", ios::out);
 
 		if (!File.is_open())
 			return false;
@@ -86,8 +86,11 @@ private:
 
 		for (clsClient& C : Clients)
 		{
-			Line = _ConvertClientObjectToLine(C);
-			File << Line << endl;
+			if (!C._MarkForDelete)
+			{
+				Line = _ConvertClientObjectToLine(C);
+				File << Line << endl;
+			}
 		}
 
 		File.close();
@@ -111,14 +114,14 @@ private:
 
 	bool _Update()
 	{
-		vector <clsClient> Clients = _LoadClientsFromFile("Clients.txt");
+		vector <clsClient> Clients = _LoadClientsFromFile();
 
 		for (clsClient& C : Clients)
 		{
 			if (C.AccountNumber() == AccountNumber())
 			{
 				C = *this;
-				return _SaveClientsToFile("Clients.txt", Clients);
+				return _SaveClientsToFile(Clients);
 			}
 		}
 
@@ -283,7 +286,10 @@ public:
 				if (IsClientExist(AccountNumber()))
 					return false;
 				else
+				{
+					_Mode = enMode::UpdateMode;
 					return _AddNew();
+				}
 
 				break;
 			}
@@ -299,5 +305,28 @@ public:
 			default:
 				return false;
 		}
+	}
+	
+	bool Delete()
+	{
+		vector <clsClient> Clients = _LoadClientsFromFile();
+
+		for (clsClient& C : Clients)
+		{
+			if (C.AccountNumber() == AccountNumber())
+			{
+				C._MarkForDelete = true;
+				break;
+			}
+		}
+
+		bool IsSaved = _SaveClientsToFile(Clients);
+
+		if (IsSaved)
+		{
+			*this = _GetEmptyClientObject();
+		}
+
+		return IsSaved;
 	}
 };
