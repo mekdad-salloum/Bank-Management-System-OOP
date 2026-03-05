@@ -1,12 +1,14 @@
 #pragma once
 
 #include <iostream>
+
 #include "clsScreen.h"
 #include "clsClientsListScreen.h"
+#include "clsAddNewClientScreen.h"
 
 using namespace std;
 
-class clsMainMenuScreen : clsScreen
+class clsMainMenuScreen : protected clsScreen
 {
 
 private:
@@ -19,11 +21,6 @@ private:
 		return Option;
 	}
 
-	static void _ShowClientsListScreen()
-	{
-		clsClientsListScreen::ShowClientsList();
-	}
-
 	static void _GoBackToMainMenuScreen()
 	{
 		cout << "\n";
@@ -31,6 +28,18 @@ private:
 		system("pause>0");
 		ShowMainMenuScreen();
 	}
+
+
+	static void _ShowClientsListScreen()
+	{
+		clsClientsListScreen::ShowClientsList();
+	}
+
+	static void _ShowAddNewClientScreen()
+	{
+		clsAddNewClientScreen::ShowAddNewClient();
+	}
+
 
 	static void _PerformMainMenuScreen(enMainMenuOptions Option)
 	{
@@ -40,6 +49,14 @@ private:
 			{
 				system("cls");
 				_ShowClientsListScreen();
+				_GoBackToMainMenuScreen();
+				break;
+			}
+
+			case enAddNewClient:
+			{
+				 system("cls");
+				_ShowAddNewClientScreen();
 				_GoBackToMainMenuScreen();
 				break;
 			}

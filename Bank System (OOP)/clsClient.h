@@ -256,21 +256,6 @@ public:
 		return clsClient(enMode::AddNewMode, "", "", "", "", AccountNumber, "", 0);
 	}
 
-	void Print()
-	{
-		cout << "\nClient Card:";
-		cout << "\n____________________________________";
-		cout << "\nFirstName   : " << FirstName;
-		cout << "\nLastName    : " << LastName;
-		cout << "\nFull Name   : " << FullName();
-		cout << "\nEmail       : " << Email;
-		cout << "\nPhone       : " << Phone;
-		cout << "\nAcc. Number : " << AccountNumber();
-		cout << "\nPassword    : " << PinCode;
-		cout << "\nBalance     : " << Balance;
-		cout << "\n____________________________________\n";
-	}
-
 	bool Save()
 	{
 		switch (_Mode)

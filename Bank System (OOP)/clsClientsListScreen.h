@@ -1,25 +1,14 @@
 #pragma once
 
 #include <iostream>
+#include "clsClientUI.h"
 
 using namespace std;
 
-class clsClientsListScreen : clsScreen
+class clsClientsListScreen : protected clsScreen
 {
 
 public:
-
-	static void PrintClientRecord(clsClient& Client)
-	{
-		cout << clsUtility::Tabs(2);
-		cout << "| " << setw(15) << left << Client.AccountNumber();
-		cout << "| " << setw(20) << left << Client.FullName();
-		cout << "| " << setw(12) << left << Client.Phone;
-		cout << "| " << setw(20) << left << Client.Email;
-		cout << "| " << setw(10) << left << Client.PinCode;
-		cout << "| " << setw(12) << left << Client.Balance;
-		cout << "\n";
-	}
 
 	static void ShowClientsList()
 	{
@@ -44,7 +33,7 @@ public:
 		{
 			for (clsClient& C : Clients)
 			{
-				PrintClientRecord(C);
+				clsClientUI::PrintClientRecord(C);
 			}
 		}
 

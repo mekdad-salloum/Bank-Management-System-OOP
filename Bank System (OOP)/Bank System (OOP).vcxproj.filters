@@ -62,5 +62,11 @@
     <ClInclude Include="clsClientsListScreen.h">
       <Filter>Header Files\Screens\Main Menu Screen</Filter>
     </ClInclude>
+    <ClInclude Include="clsAddNewClientScreen.h">
+      <Filter>Header Files\Screens\Main Menu Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="clsClientUI.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
