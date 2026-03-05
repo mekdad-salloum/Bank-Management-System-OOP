@@ -329,4 +329,26 @@ public:
 
 		return IsSaved;
 	}
+
+	static vector <clsClient> GetAllClients()
+	{
+		return _LoadClientsFromFile();
+	}
+
+	static double GetTotalBalances()
+	{
+		double TotalBalances = 0;
+
+		vector <clsClient> Clients = _LoadClientsFromFile();
+
+		for (clsClient& C : Clients)
+		{
+			TotalBalances += C.Balance;
+		}
+
+		return TotalBalances;
+	}
+
+
+
 };
