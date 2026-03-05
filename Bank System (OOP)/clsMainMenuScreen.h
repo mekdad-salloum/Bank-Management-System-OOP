@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "clsScreen.h"
+#include "clsClientsListScreen.h"
 
 using namespace std;
 
@@ -20,11 +21,12 @@ private:
 
 	static void _ShowClientsListScreen()
 	{
-		cout << "Hello World\n";
+		clsClientsListScreen::ShowClientsList();
 	}
 
 	static void _GoBackToMainMenuScreen()
 	{
+		cout << "\n";
 		cout << clsUtility::Tabs(5) << "Press Any Key To Go Back To Main Menu....";
 		system("pause>0");
 		ShowMainMenuScreen();

@@ -17,7 +17,7 @@ protected:
 		cout << clsUtility::Tabs(7) << Title << endl;
 
 		if (SubTitle != "")
-			cout << clsUtility::Tabs(7) << Title << endl;
+			cout << clsUtility::Tabs(7) << SubTitle << endl;
 
 		cout << clsUtility::Tabs(5) << "__________________________________________________\n\n";
 	}
