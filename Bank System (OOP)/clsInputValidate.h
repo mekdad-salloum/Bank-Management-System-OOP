@@ -35,6 +35,7 @@ public:
 	{
 		T Number = ReadNumber<T>();
 
+		cout << "\n";
 		while (!IsNumberBetween(Number, From, To))
 		{
 			cout << ErrorMessage;

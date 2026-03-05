@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Classification">
       <UniqueIdentifier>{b31dc7e2-05ca-4da7-a71e-073686ce2626}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Screens\Main Menu Screen">
+      <UniqueIdentifier>{9dded3ca-42ed-412f-9514-d5f37d92cc39}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -49,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="clsUtility.h">
       <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="clsScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsMainMenuScreen.h">
+      <Filter>Header Files\Screens\Main Menu Screen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

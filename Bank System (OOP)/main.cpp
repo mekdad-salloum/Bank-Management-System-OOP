@@ -4,6 +4,7 @@
 #include "clsClient.h"
 #include "clsInputValidate.h"
 #include "clsUtility.h"
+#include "clsMainMenuScreen.h"
 
 using namespace std;
 
@@ -202,7 +203,7 @@ void ShowTotalBalances()
 
 int main()
 {
-	ShowTotalBalances();
+	clsMainMenuScreen::ShowMainMenuScreen();
 
 	system("pause>0");
 
