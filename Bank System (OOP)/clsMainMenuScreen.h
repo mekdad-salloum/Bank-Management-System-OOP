@@ -1,10 +1,11 @@
 #pragma once
 
-#include <iostream>
-
 #include "clsScreen.h"
 #include "clsClientsListScreen.h"
 #include "clsAddNewClientScreen.h"
+#include "clsDeleteClientScreen.h"
+#include "clsUpdateClientScreen.h"
+#include "clsFindClientScreen.h"
 
 using namespace std;
 
@@ -40,6 +41,21 @@ private:
 		clsAddNewClientScreen::ShowAddNewClient();
 	}
 
+	static void _ShowDeleteClientScreen()
+	{
+		clsDeleteClientScreen::ShowDeleteClient();
+	}
+
+	static void _ShowUpdateClientScreen()
+	{
+		clsUpdateClientScreen::ShowUpdateClient();
+	}
+
+	static void _ShowFindClientScreen()
+	{
+		clsFindClientScreen::ShowFindClient();
+	}
+
 
 	static void _PerformMainMenuScreen(enMainMenuOptions Option)
 	{
@@ -57,6 +73,30 @@ private:
 			{
 				 system("cls");
 				_ShowAddNewClientScreen();
+				_GoBackToMainMenuScreen();
+				break;
+			}
+
+			case enDeleteClient:
+			{
+				system("cls");
+				_ShowDeleteClientScreen();
+				_GoBackToMainMenuScreen();
+				break;
+			}
+
+			case enUpdateClient:
+			{
+				system("cls");
+				_ShowUpdateClientScreen();
+				_GoBackToMainMenuScreen();
+				break;
+			}
+
+			case enFindClient:
+			{
+				system("cls");
+				_ShowFindClientScreen();
 				_GoBackToMainMenuScreen();
 				break;
 			}

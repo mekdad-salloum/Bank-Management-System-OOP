@@ -1,10 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include "clsClientUI.h"
-
-using namespace std;
-
 class clsClientsListScreen : protected clsScreen
 {
 

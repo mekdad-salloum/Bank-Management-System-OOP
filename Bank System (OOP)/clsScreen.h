@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include "clsUtility.h"
+#include "clsInputValidate.h"
+#include "clsClientUI.h"
 
 using namespace std;
 

@@ -1,10 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include "clsClientUI.h"
-
-using namespace std;
-
 class clsAddNewClientScreen : protected clsScreen
 {
 private:
@@ -35,6 +30,7 @@ private:
 		cout << "Enter Account Number: ";
 		string AccountNumber = clsInputValidate::ReadString();
 
+		cout << "\n";
 		while (clsClient::IsClientExist(AccountNumber))
 		{
 			cout << "Account Number Is Already Used, Choose Another One: ";

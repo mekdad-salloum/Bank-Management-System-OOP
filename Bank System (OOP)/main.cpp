@@ -8,69 +8,6 @@
 
 using namespace std;
 
-//void UpdateClient()
-//{
-//	cout << "Enter Client Account Number: ";
-//	string AccountNumber = clsInputValidate::ReadString();
-//
-//	while (!clsClient::IsClientExist(AccountNumber))
-//	{
-//		cout << "Account Number Is Not Found: Choose Another One: ";
-//		AccountNumber = clsInputValidate::ReadString();
-//	}
-//	
-//	clsClient Client = clsClient::Find(AccountNumber);
-//	Client.Print();
-//
-//	cout << "\n\nUpdate Client Info:";
-//	cout << "\n---------------------\n";
-//	ReadClientInfo(Client);
-//
-//	if (Client.Save())
-//	{
-//		cout << "\nClient Updated Successfully :-)\n";
-//		Client.Print();
-//	}
-//
-//	else
-//	{
-//		cout << "\nError Account Was Not Saved :-(\n";
-//	}
-//}
-
-//void DeleteClient()
-//{
-//	cout << "Enter Client Account Number: ";
-//	string AccountNumber = clsInputValidate::ReadString();
-//
-//	while (!clsClient::IsClientExist(AccountNumber))
-//	{
-//		cout << "Account Number Is Not Found: Choose Another One: ";
-//		AccountNumber = clsInputValidate::ReadString();
-//	}
-//
-//	clsClient Client = clsClient::Find(AccountNumber);
-//	Client.Print();
-//
-//	char Answer = 'N';
-//	cout << "\nAre You Sure You Want To Delete This Client? (Y/N) ";
-//	cin >> Answer;
-//
-//	if (toupper(Answer) == 'Y')
-//	{
-//		if (Client.Delete())
-//		{
-//			cout << "\nClient Deleted Successfully :-)\n";
-//			Client.Print();
-//		}
-//
-//		else
-//		{
-//			cout << "\nError, Account Was Not Deleted :-(\n";
-//		}
-//	}
-//}
-
 
 void PrintClientBalanceRecord(clsClient& Client)
 {
