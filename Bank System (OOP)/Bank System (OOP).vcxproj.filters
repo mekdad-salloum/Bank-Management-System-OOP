@@ -22,7 +22,10 @@
     <Filter Include="Header Files\Classification">
       <UniqueIdentifier>{b31dc7e2-05ca-4da7-a71e-073686ce2626}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Screens\Main Menu Screen">
+    <Filter Include="Header Files\Screens\Transactions Menu Screens">
+      <UniqueIdentifier>{4788d679-fee9-462a-891b-2fdf82241bc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Screens\Main Menu Screens">
       <UniqueIdentifier>{9dded3ca-42ed-412f-9514-d5f37d92cc39}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -57,25 +60,37 @@
       <Filter>Header Files\Screens</Filter>
     </ClInclude>
     <ClInclude Include="clsMainMenuScreen.h">
-      <Filter>Header Files\Screens\Main Menu Screen</Filter>
+      <Filter>Header Files\Screens\Main Menu Screens</Filter>
     </ClInclude>
     <ClInclude Include="clsClientsListScreen.h">
-      <Filter>Header Files\Screens\Main Menu Screen</Filter>
+      <Filter>Header Files\Screens\Main Menu Screens</Filter>
     </ClInclude>
     <ClInclude Include="clsAddNewClientScreen.h">
-      <Filter>Header Files\Screens\Main Menu Screen</Filter>
+      <Filter>Header Files\Screens\Main Menu Screens</Filter>
     </ClInclude>
     <ClInclude Include="clsClientUI.h">
       <Filter>Header Files\Screens</Filter>
     </ClInclude>
     <ClInclude Include="clsDeleteClientScreen.h">
-      <Filter>Header Files\Screens\Main Menu Screen</Filter>
+      <Filter>Header Files\Screens\Main Menu Screens</Filter>
     </ClInclude>
     <ClInclude Include="clsUpdateClientScreen.h">
-      <Filter>Header Files\Screens\Main Menu Screen</Filter>
+      <Filter>Header Files\Screens\Main Menu Screens</Filter>
     </ClInclude>
     <ClInclude Include="clsFindClientScreen.h">
-      <Filter>Header Files\Screens\Main Menu Screen</Filter>
+      <Filter>Header Files\Screens\Main Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsTransactionsMenuScreen.h">
+      <Filter>Header Files\Screens\Transactions Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsDepositeScreen.h">
+      <Filter>Header Files\Screens\Transactions Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsWithdrawScreen.h">
+      <Filter>Header Files\Screens\Transactions Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsTotalBalancesScreen.h">
+      <Filter>Header Files\Screens\Transactions Menu Screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

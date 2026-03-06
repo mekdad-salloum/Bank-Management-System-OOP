@@ -17,14 +17,23 @@ private:
 			AccountNumber = clsInputValidate::ReadString();
 		}
 
-		cout << "Client Found :-)\n";
 		clsClient Client = clsClient::Find(AccountNumber);
+
+		if (!Client.IsEmpty())
+		{
+			cout << "\nClient Found :-)\n";
+		}
+		else
+		{
+			cout << "\nClient Was not Found :-(\n";
+		}
+
 		clsClientUI::PrintClientCard(Client);
 	}
 
 public:
 	
-	static void ShowFindClient()
+	static void ShowFindClientScreen()
 	{
 		_DrawScreenHeader("Find Client Screen");
 

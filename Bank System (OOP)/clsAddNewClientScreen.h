@@ -55,7 +55,7 @@ private:
 public:
 
 
-	static void ShowAddNewClient()
+	static void ShowAddNewClientScreen()
 	{
 		_DrawScreenHeader("Add New Client Screen");
 

@@ -31,6 +31,22 @@ public:
 	}
 
 	template <typename T>
+	static T ReadPositiveNumber(string ErrorMessage = "Number Must Be Greater Than 0, Enter Again: ")
+	{
+		T Number = ReadNumber<T>();
+
+		cout << "\n";
+		while (Number <= 0) {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << ErrorMessage;
+			Number = ReadNumber<T>();
+		}
+
+		return Number;
+	}
+
+	template <typename T>
 	static T ReadNumberBetween(T From, T To, string ErrorMessage = "Number Is Not Within Range, Enter Again: ")
 	{
 		T Number = ReadNumber<T>();

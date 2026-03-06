@@ -37,11 +37,16 @@ private:
 				cout << "\nError, Account Was Not Deleted :-(\n";
 			}
 		}
+
+		else
+		{
+			cout << "\nOperation Was Cancelled.\n";
+		}
 	}
 
 public:
 
-	static void ShowDeleteClient()
+	static void ShowDeleteClientScreen()
 	{
 		_DrawScreenHeader("Delete Client Screen");
 

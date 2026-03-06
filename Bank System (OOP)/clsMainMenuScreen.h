@@ -6,6 +6,7 @@
 #include "clsDeleteClientScreen.h"
 #include "clsUpdateClientScreen.h"
 #include "clsFindClientScreen.h"
+#include "clsTransactionsMenuScreen.h"
 
 using namespace std;
 
@@ -33,27 +34,32 @@ private:
 
 	static void _ShowClientsListScreen()
 	{
-		clsClientsListScreen::ShowClientsList();
+		clsClientsListScreen::ShowClientsListScreen();
 	}
 
 	static void _ShowAddNewClientScreen()
 	{
-		clsAddNewClientScreen::ShowAddNewClient();
+		clsAddNewClientScreen::ShowAddNewClientScreen();
 	}
 
 	static void _ShowDeleteClientScreen()
 	{
-		clsDeleteClientScreen::ShowDeleteClient();
+		clsDeleteClientScreen::ShowDeleteClientScreen();
 	}
 
 	static void _ShowUpdateClientScreen()
 	{
-		clsUpdateClientScreen::ShowUpdateClient();
+		clsUpdateClientScreen::ShowUpdateClientScreen();
 	}
 
 	static void _ShowFindClientScreen()
 	{
-		clsFindClientScreen::ShowFindClient();
+		clsFindClientScreen::ShowFindClientScreen();
+	}
+
+	static void _ShowTransactionsMenuScreen()
+	{
+		clsTransactionsMenuScreen::ShowTransactionsMenuScreen();
 	}
 
 
@@ -63,7 +69,6 @@ private:
 		{
 			case enShowClientsList:
 			{
-				system("cls");
 				_ShowClientsListScreen();
 				_GoBackToMainMenuScreen();
 				break;
@@ -71,7 +76,6 @@ private:
 
 			case enAddNewClient:
 			{
-				 system("cls");
 				_ShowAddNewClientScreen();
 				_GoBackToMainMenuScreen();
 				break;
@@ -79,7 +83,6 @@ private:
 
 			case enDeleteClient:
 			{
-				system("cls");
 				_ShowDeleteClientScreen();
 				_GoBackToMainMenuScreen();
 				break;
@@ -87,7 +90,6 @@ private:
 
 			case enUpdateClient:
 			{
-				system("cls");
 				_ShowUpdateClientScreen();
 				_GoBackToMainMenuScreen();
 				break;
@@ -95,8 +97,14 @@ private:
 
 			case enFindClient:
 			{
-				system("cls");
 				_ShowFindClientScreen();
+				_GoBackToMainMenuScreen();
+				break;
+			}
+
+			case enTransactions:
+			{
+				_ShowTransactionsMenuScreen();
 				_GoBackToMainMenuScreen();
 				break;
 			}
@@ -110,7 +118,7 @@ public:
 		_DrawScreenHeader("Main Menu Screen");
 
 		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(7) << "Main Menu Screen\n";
+		cout << clsUtility::Tabs(7) << "Main Menu\n";
 		cout << clsUtility::Tabs(5) << "==================================================\n";
 		cout << clsUtility::Tabs(6) << "  1) Show Clients List.\n";
 		cout << clsUtility::Tabs(6) << "  2) Add New Client.\n";

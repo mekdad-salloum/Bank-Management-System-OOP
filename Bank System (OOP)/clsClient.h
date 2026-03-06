@@ -334,6 +334,21 @@ public:
 		return TotalBalances;
 	}
 
+	bool Deposite(double Amount)
+	{
+		_Balance += Amount;
+		return Save();
+	}
 
+	bool Withdraw(double Amount)
+	{
+		if (_Balance >= Amount)
+		{
+			_Balance -= Amount;
+			return Save();
+		}
+
+		return false;
+	}
 
 };

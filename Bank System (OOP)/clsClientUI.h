@@ -13,11 +13,20 @@ class clsClientUI
 
 public:
 
+	static void PrintClientBalanceRecord(clsClient& Client)
+	{
+		cout << clsUtility::Tabs(3);
+		cout << "| " << setw(15) << left << Client.AccountNumber();
+		cout << "| " << setw(40) << left << Client.FullName();
+		cout << "| " << setw(12) << left << Client.Balance;
+		cout << "\n";
+	}
+
 	static void PrintClientRecord(clsClient& Client)
 	{
 		cout << clsUtility::Tabs(2);
 		cout << "| " << setw(15) << left << Client.AccountNumber();
-		cout << "| " << setw(20) << left << Client.FullName();
+		cout << "| " << setw(30) << left << Client.FullName();
 		cout << "| " << setw(12) << left << Client.Phone;
 		cout << "| " << setw(20) << left << Client.Email;
 		cout << "| " << setw(10) << left << Client.PinCode;
@@ -60,6 +69,7 @@ public:
 		cout << "Enter Balance: ";
 		Client.Balance = clsInputValidate::ReadNumber<double>();
 	}
+
 
 };
 

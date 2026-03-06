@@ -41,11 +41,16 @@ private:
 				cout << "\nError Account Was Not Saved :-(\n";
 			}
 		}
+
+		else
+		{
+			cout << "\nOperation Was Cancelled.\n";
+		}
 	}
 
 public:
 
-	static void ShowUpdateClient()
+	static void ShowUpdateClientScreen()
 	{
 		_DrawScreenHeader("Update Client Screen");
 
