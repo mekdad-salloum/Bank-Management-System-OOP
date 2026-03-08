@@ -7,6 +7,8 @@
 #include "clsUpdateClientScreen.h"
 #include "clsFindClientScreen.h"
 #include "clsTransactionsMenuScreen.h"
+#include "clsManageUsersMenuScreen.h"
+
 
 using namespace std;
 
@@ -62,7 +64,12 @@ private:
 		clsTransactionsMenuScreen::ShowTransactionsMenuScreen();
 	}
 
+	static void _ShowManageUsersMenuScreen()
+	{
+		clsManageUsersMenuScreen::ShowManageUsersMenuScreen();
+	}
 
+	
 	static void _PerformMainMenuScreen(enMainMenuOptions Option)
 	{
 		switch (Option)
@@ -105,6 +112,13 @@ private:
 			case enTransactions:
 			{
 				_ShowTransactionsMenuScreen();
+				_GoBackToMainMenuScreen();
+				break;
+			}
+
+			case enManageUsers:
+			{
+				_ShowManageUsersMenuScreen();
 				_GoBackToMainMenuScreen();
 				break;
 			}

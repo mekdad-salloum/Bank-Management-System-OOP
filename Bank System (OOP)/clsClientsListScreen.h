@@ -22,7 +22,7 @@ public:
 		cout << clsUtility::Tabs(2) << "___________________________________________________________________________________________________________\n\n";
 
 		if (Clients.size() == 0)
-			cout << "\t\t\t\tNo Clients Available In the System!";
+			cout << clsUtility::Tabs(6) << "No Clients Available In the System!";
 
 		else
 		{

@@ -140,6 +140,7 @@
     <ClInclude Include="clsFindClientScreen.h" />
     <ClInclude Include="clsInputValidate.h" />
     <ClInclude Include="clsMainMenuScreen.h" />
+    <ClInclude Include="clsManageUsersMenuScreen.h" />
     <ClInclude Include="clsPeriod.h" />
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScreen.h" />
@@ -147,6 +148,9 @@
     <ClInclude Include="clsTotalBalancesScreen.h" />
     <ClInclude Include="clsTransactionsMenuScreen.h" />
     <ClInclude Include="clsUpdateClientScreen.h" />
+    <ClInclude Include="clsUser.h" />
+    <ClInclude Include="clsUsersListScreen.h" />
+    <ClInclude Include="clsUserUI.h" />
     <ClInclude Include="clsUtility.h" />
     <ClInclude Include="clsWithdrawScreen.h" />
   </ItemGroup>

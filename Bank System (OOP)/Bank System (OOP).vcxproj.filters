@@ -28,6 +28,9 @@
     <Filter Include="Header Files\Screens\Main Menu Screens">
       <UniqueIdentifier>{9dded3ca-42ed-412f-9514-d5f37d92cc39}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Screens\Manage Users Menu Screens">
+      <UniqueIdentifier>{3db71e0d-f1cc-4697-bd0d-99df942db426}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -91,6 +94,18 @@
     </ClInclude>
     <ClInclude Include="clsTotalBalancesScreen.h">
       <Filter>Header Files\Screens\Transactions Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsManageUsersMenuScreen.h">
+      <Filter>Header Files\Screens\Manage Users Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsUsersListScreen.h">
+      <Filter>Header Files\Screens\Manage Users Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsUser.h">
+      <Filter>Header Files\Classification</Filter>
+    </ClInclude>
+    <ClInclude Include="clsUserUI.h">
+      <Filter>Header Files\Screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

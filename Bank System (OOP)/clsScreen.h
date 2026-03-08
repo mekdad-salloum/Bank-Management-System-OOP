@@ -4,6 +4,8 @@
 #include "clsUtility.h"
 #include "clsInputValidate.h"
 #include "clsClientUI.h"
+#include "clsUserUI.h"
+
 
 using namespace std;
 

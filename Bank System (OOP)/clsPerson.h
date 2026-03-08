@@ -1,6 +1,12 @@
 #pragma once
 
 #include <iostream>
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <string>
+
+#include "clsString.h"
 
 using namespace std;
 
