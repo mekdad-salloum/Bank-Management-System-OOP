@@ -19,6 +19,8 @@ private:
 
 	enum enMainMenuOptions { enShowClientsList = 1, enAddNewClient = 2, enDeleteClient = 3, enUpdateClient = 4, enFindClient = 5, enTransactions = 6, enManageUsers = 7, enLogout = 8 };
 
+
+
 	static short _ReadMainMenuOption()
 	{
 		short Option = clsInputValidate::ReadNumberBetween(1, 8, "Invalid Input, Enter A Number Between 1 And 8: ");
@@ -126,6 +128,7 @@ private:
 	}
 
 public:
+
 
 	static void ShowMainMenuScreen()
 	{

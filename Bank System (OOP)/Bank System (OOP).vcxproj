@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clsAddNewClientScreen.h" />
+    <ClInclude Include="clsAddNewUserScreen.h" />
     <ClInclude Include="clsClient.h" />
     <ClInclude Include="clsClientUI.h" />
     <ClInclude Include="clsClientsListScreen.h" />

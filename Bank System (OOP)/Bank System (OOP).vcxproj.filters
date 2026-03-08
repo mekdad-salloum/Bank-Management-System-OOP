@@ -107,5 +107,8 @@
     <ClInclude Include="clsUserUI.h">
       <Filter>Header Files\Screens</Filter>
     </ClInclude>
+    <ClInclude Include="clsAddNewUserScreen.h">
+      <Filter>Header Files\Screens\Manage Users Menu Screens</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -34,32 +34,110 @@ public:
 		cout << "\nFull Name   : " << User.FullName();
 		cout << "\nEmail       : " << User.Email;
 		cout << "\nPhone       : " << User.Phone;
-		cout << "\nAcc. Number : " << User.UserName;
+		cout << "\nUserName    : " << User.UserName;
 		cout << "\nPassword    : " << User.Password;
-		cout << "\nBalance     : " << User.Permissions;
+		cout << "\nPermissions : " << User.Permissions;
 		cout << "\n____________________________________\n";
 	}
 
-	//static void ReadUserInfo(clsUser& User)
-	//{
-	//	cout << "\nEnter First Name: ";
-	//	User.FirstName = clsInputValidate::ReadString();
+	static void ReadUserInfo(clsUser& User)
+	{
+		cout << "\nEnter First Name: ";
+		User.FirstName = clsInputValidate::ReadString();
 
-	//	cout << "Enter Last Name: ";
-	//	User.LastName = clsInputValidate::ReadString();
+		cout << "Enter Last Name: ";
+		User.LastName = clsInputValidate::ReadString();
 
-	//	cout << "Enter Email: ";
-	//	User.Email = clsInputValidate::ReadString();
+		cout << "Enter Email: ";
+		User.Email = clsInputValidate::ReadString();
 
-	//	cout << "Enter Phone: ";
-	//	User.Phone = clsInputValidate::ReadString();
+		cout << "Enter Phone: ";
+		User.Phone = clsInputValidate::ReadString();
 
-	//	cout << "Enter PinCode: ";
-	//	User.PinCode = clsInputValidate::ReadString();
+		cout << "Enter Password: ";
+		User.Password = clsInputValidate::ReadString();
 
-	//	cout << "Enter Balance: ";
-	//	User.Balance = clsInputValidate::ReadNumber<double>();
-	//}
+		cout << "Enter Permissions: \n\n";
+		User.Permissions = ReadUserPermissions();
+	}
+
+	static short ReadUserPermissions()
+	{
+		short Permissions = 0;
+		char Answer = 'N';
+
+		cout << "Do You Want To Give Full Access? (Y/N)?  ";
+		cin >> Answer;
+
+		if (toupper(Answer) == 'Y')
+		{
+			Permissions = clsUser::pAllPermissions;
+		}
+
+		else
+		{
+			cout << "\nDo You Want To Give Access To:\n\n";
+
+			cout << "Show Clients List? (Y/N)? ";
+			cin >> Answer;
+
+			if (toupper(Answer) == 'Y')
+			{
+				Permissions += clsUser::pShowClientsList;
+			}
+
+			cout << "Add New CLient? (Y/N)? ";
+			cin >> Answer;
+
+			if (toupper(Answer) == 'Y')
+			{
+				Permissions += clsUser::pAddNewClient;
+			}
+
+			cout << "Delete Client? (Y/N)? ";
+			cin >> Answer;
+
+			if (toupper(Answer) == 'Y')
+			{
+				Permissions += clsUser::pDeleteClient;
+			}
+
+			cout << "Update Client? (Y/N)? ";
+			cin >> Answer;
+
+			if (toupper(Answer) == 'Y')
+			{
+				Permissions += clsUser::pUpdateClient;
+			}
+
+			cout << "Find Client? (Y/N)? ";
+			cin >> Answer;
+
+			if (toupper(Answer) == 'Y')
+			{
+				Permissions += clsUser::pFindClient;
+			}
+
+			cout << "Transactions? (Y/N)? ";
+			cin >> Answer;
+
+			if (toupper(Answer) == 'Y')
+			{
+				Permissions += clsUser::pTransactions;
+			}
+
+			cout << "Manage Users? (Y/N)? ";
+			cin >> Answer;
+
+			if (toupper(Answer) == 'Y')
+			{
+				Permissions += clsUser::pManageUsers;
+			}
+
+		}
+
+		return Permissions;
+	}
 
 
 };

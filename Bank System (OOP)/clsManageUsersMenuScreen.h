@@ -2,7 +2,7 @@
 
 #include "clsScreen.h"
 #include "clsUsersListScreen.h"
-//#include "clsAddNewUserScreen.h"
+#include "clsAddNewUserScreen.h"
 //#include "clsDeleteUserScreen.h"
 //#include "clsUpdateUserScreen.h"
 //#include "clsFindUserScreen.h"
@@ -36,7 +36,7 @@ private:
 
 	static void _ShowAddNewUserScreen()
 	{
-		//clsAddNewUserScreen::ShowAddNewUserScreen();
+		clsAddNewUserScreen::ShowAddNewUserScreen();
 	}
 
 	static void _ShowDeleteUserScreen()
@@ -69,7 +69,7 @@ private:
 
 			case enAddNewUser:
 			{
-				//_ShowAddNewUserScreen();
+				_ShowAddNewUserScreen();
 				_GoBackToManageUsersMenuScreen();
 				break;
 			}
