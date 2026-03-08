@@ -31,6 +31,9 @@
     <Filter Include="Header Files\Screens\Manage Users Menu Screens">
       <UniqueIdentifier>{3db71e0d-f1cc-4697-bd0d-99df942db426}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Screens\UI">
+      <UniqueIdentifier>{78a71db3-0d76-4efb-95c6-cc2b2db7a133}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,9 +74,6 @@
     <ClInclude Include="clsAddNewClientScreen.h">
       <Filter>Header Files\Screens\Main Menu Screens</Filter>
     </ClInclude>
-    <ClInclude Include="clsClientUI.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
     <ClInclude Include="clsDeleteClientScreen.h">
       <Filter>Header Files\Screens\Main Menu Screens</Filter>
     </ClInclude>
@@ -104,11 +104,23 @@
     <ClInclude Include="clsUser.h">
       <Filter>Header Files\Classification</Filter>
     </ClInclude>
-    <ClInclude Include="clsUserUI.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
     <ClInclude Include="clsAddNewUserScreen.h">
       <Filter>Header Files\Screens\Manage Users Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsDeleteUserScreen.h">
+      <Filter>Header Files\Screens\Manage Users Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsUpdateUserScreen.h">
+      <Filter>Header Files\Screens\Manage Users Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsFindUserScreen.h">
+      <Filter>Header Files\Screens\Manage Users Menu Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="clsClientUI.h">
+      <Filter>Header Files\Screens\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="clsUserUI.h">
+      <Filter>Header Files\Screens\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

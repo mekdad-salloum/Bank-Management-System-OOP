@@ -21,7 +21,7 @@ private:
 		clsClientUI::PrintClientCard(Client);
 
 		char Answer = 'N';
-		cout << "\nAre You Sure You Want To Delete This Client? (Y/N) ";
+		cout << "\nAre You Sure You Want To Update This Client? (Y/N) ";
 		cin >> Answer;
 
 		if (toupper(Answer) == 'Y')

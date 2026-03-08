@@ -96,5 +96,32 @@ public:
 		return S;
 	}
 
+	static char ReadChar(string ErrorMessage = "Enter one character only: ")
+	{
+		string Input;
+
+		while (true)
+		{
+			getline(cin >> ws, Input);
+
+			if (Input.length() == 1)
+				return Input[0];
+
+			cout << ErrorMessage;
+		}
+	}
+
+	static char ReadCharBetween(char From, char To, string ErrorMessage = "Character out of range, Enter Again: ")
+	{
+		char C = ReadChar();
+
+		while (C < From || C > To)
+		{
+			cout << ErrorMessage;
+			C = ReadChar();
+		}
+
+		return C;
+	}
 };
 

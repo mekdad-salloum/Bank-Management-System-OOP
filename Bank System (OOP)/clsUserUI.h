@@ -79,7 +79,7 @@ public:
 			cout << "\nDo You Want To Give Access To:\n\n";
 
 			cout << "Show Clients List? (Y/N)? ";
-			cin >> Answer;
+			Answer = clsInputValidate::ReadChar();
 
 			if (toupper(Answer) == 'Y')
 			{
@@ -87,7 +87,7 @@ public:
 			}
 
 			cout << "Add New CLient? (Y/N)? ";
-			cin >> Answer;
+			Answer = clsInputValidate::ReadChar();
 
 			if (toupper(Answer) == 'Y')
 			{
@@ -95,7 +95,7 @@ public:
 			}
 
 			cout << "Delete Client? (Y/N)? ";
-			cin >> Answer;
+			Answer = clsInputValidate::ReadChar();
 
 			if (toupper(Answer) == 'Y')
 			{
@@ -103,7 +103,7 @@ public:
 			}
 
 			cout << "Update Client? (Y/N)? ";
-			cin >> Answer;
+			Answer = clsInputValidate::ReadChar();
 
 			if (toupper(Answer) == 'Y')
 			{
@@ -111,7 +111,7 @@ public:
 			}
 
 			cout << "Find Client? (Y/N)? ";
-			cin >> Answer;
+			Answer = clsInputValidate::ReadChar();
 
 			if (toupper(Answer) == 'Y')
 			{
@@ -119,7 +119,7 @@ public:
 			}
 
 			cout << "Transactions? (Y/N)? ";
-			cin >> Answer;
+			Answer = clsInputValidate::ReadChar();
 
 			if (toupper(Answer) == 'Y')
 			{
@@ -127,7 +127,7 @@ public:
 			}
 
 			cout << "Manage Users? (Y/N)? ";
-			cin >> Answer;
+			Answer = clsInputValidate::ReadChar();
 
 			if (toupper(Answer) == 'Y')
 			{

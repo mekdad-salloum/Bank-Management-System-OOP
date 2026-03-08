@@ -3,9 +3,9 @@
 #include "clsScreen.h"
 #include "clsUsersListScreen.h"
 #include "clsAddNewUserScreen.h"
-//#include "clsDeleteUserScreen.h"
-//#include "clsUpdateUserScreen.h"
-//#include "clsFindUserScreen.h"
+#include "clsDeleteUserScreen.h"
+#include "clsUpdateUserScreen.h"
+#include "clsFindUserScreen.h"
 
 class clsManageUsersMenuScreen : clsScreen
 {
@@ -41,17 +41,17 @@ private:
 
 	static void _ShowDeleteUserScreen()
 	{
-		//clsDeleteUserScreen::ShowDeleteUserScreen();
+		clsDeleteUserScreen::ShowDeleteUserScreen();
 	}
 
 	static void _ShowUpdateUserScreen()
 	{
-		//clsUpdateUserScreen::ShowUpdateUserScreen();
+		clsUpdateUserScreen::ShowUpdateUserScreen();
 	}
 
 	static void _ShowFindUserScreen()
 	{
-		//clsFindUserScreen::ShowFindUserScreen();
+		clsFindUserScreen::ShowFindUserScreen();
 	}
 
 
@@ -76,21 +76,21 @@ private:
 
 			case enDeleteUser:
 			{
-				//_ShowDeleteUserScreen();
+				_ShowDeleteUserScreen();
 				_GoBackToManageUsersMenuScreen();
 				break;
 			}
 
 			case enUpdateUser:
 			{
-				//_ShowUpdateUserScreen();
+				_ShowUpdateUserScreen();
 				_GoBackToManageUsersMenuScreen();
 				break;
 			}
 
 			case enFindUser:
 			{
-				//_ShowFindUserScreen();
+				_ShowFindUserScreen();
 				_GoBackToManageUsersMenuScreen();
 				break;
 			}
