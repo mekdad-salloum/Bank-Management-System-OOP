@@ -8,7 +8,7 @@
 #include "clsFindClientScreen.h"
 #include "clsTransactionsMenuScreen.h"
 #include "clsManageUsersMenuScreen.h"
-
+#include "clsGlobal.h"
 
 using namespace std;
 
@@ -71,6 +71,13 @@ private:
 		clsManageUsersMenuScreen::ShowManageUsersMenuScreen();
 	}
 
+	static void _Logout()
+	{
+		clsGlobal::CurrentUser = clsUser::Find("", "");
+		
+		//Then It Will Go Back To Main Function.
+	}
+
 	
 	static void _PerformMainMenuScreen(enMainMenuOptions Option)
 	{
@@ -124,6 +131,12 @@ private:
 				_GoBackToMainMenuScreen();
 				break;
 			}
+
+			case enLogout:
+			{
+				_Logout();
+				break;
+			}
 		}
 	}
 
@@ -152,14 +165,5 @@ public:
 	}
 
 };
-
-
-
-
-
-
-
-
-
 
 

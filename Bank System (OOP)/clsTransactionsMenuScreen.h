@@ -81,6 +81,11 @@ public:
 
 	static void ShowTransactionsMenuScreen()
 	{
+		if (!CheckAccessRights(clsUser::pTransactions))
+		{
+			return;
+		}
+
 		_DrawScreenHeader("Transactions Menu Screen");
 
 		cout << clsUtility::Tabs(5) << "==================================================\n";

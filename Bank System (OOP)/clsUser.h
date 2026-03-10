@@ -323,5 +323,8 @@ public:
 		return _LoadUsersFromFile();
 	}
 
-
+	bool CheckAccessPermission(enPermissions Permission)
+	{
+		return (this->Permissions == enPermissions::pAllPermissions) || ((this->Permissions & Permission) == Permission);
+	}
 };

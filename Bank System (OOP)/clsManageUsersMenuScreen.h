@@ -106,6 +106,11 @@ public:
 
 	static void ShowManageUsersMenuScreen()
 	{
+		if (!CheckAccessRights(clsUser::pManageUsers))
+		{
+			return;
+		}
+
 		_DrawScreenHeader("Manage Users Menu Screen");
 
 		cout << clsUtility::Tabs(5) << "==================================================\n";

@@ -7,6 +7,11 @@ public:
 
 	static void ShowClientsListScreen()
 	{
+		if (!CheckAccessRights(clsUser::pShowClientsList))
+		{
+			return;
+		}
+
 		vector <clsClient> Clients = clsClient::GetAllClients();
 
 		_DrawScreenHeader("Clients List Screen", "   (" + to_string(Clients.size()) + ") Client(s).");

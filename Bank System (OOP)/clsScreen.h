@@ -5,7 +5,7 @@
 #include "clsInputValidate.h"
 #include "clsClientUI.h"
 #include "clsUserUI.h"
-
+#include "clsGlobal.h"
 
 using namespace std;
 
@@ -26,6 +26,26 @@ protected:
 		cout << clsUtility::Tabs(5) << "__________________________________________________\n\n";
 	}
 	
+
+	static bool CheckAccessRights(clsUser::enPermissions Permission)
+	{
+		if (!clsGlobal::CurrentUser.CheckAccessPermission(Permission))
+		{
+			system("cls");
+			cout << clsUtility::Tabs(5) << "__________________________________________________\n\n";
+			cout << clsUtility::Tabs(7) << "Access Denied" << endl;
+			cout << clsUtility::Tabs(5) << "__________________________________________________\n\n";
+			cout << clsUtility::Tabs(5) << "You Don't Have Permissions To Do This.\n";
+			cout << clsUtility::Tabs(5) << "Please Contact Your Admin.\n";
+			return false;
+		}
+
+		else
+		{
+			return true;
+		}
+
+	}
 
 
 };

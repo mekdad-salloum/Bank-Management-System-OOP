@@ -35,6 +35,11 @@ public:
 	
 	static void ShowFindClientScreen()
 	{
+		if (!CheckAccessRights(clsUser::pFindClient))
+		{
+			return;
+		}
+
 		_DrawScreenHeader("Find Client Screen");
 
 		_FindClient();
