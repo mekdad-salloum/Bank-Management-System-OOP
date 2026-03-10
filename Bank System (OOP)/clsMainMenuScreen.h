@@ -8,6 +8,7 @@
 #include "clsFindClientScreen.h"
 #include "clsTransactionsMenuScreen.h"
 #include "clsManageUsersMenuScreen.h"
+#include "clsLoginRegisterScreen.h"
 #include "clsGlobal.h"
 
 using namespace std;
@@ -17,13 +18,13 @@ class clsMainMenuScreen : protected clsScreen
 
 private:
 
-	enum enMainMenuOptions { enShowClientsList = 1, enAddNewClient = 2, enDeleteClient = 3, enUpdateClient = 4, enFindClient = 5, enTransactions = 6, enManageUsers = 7, enLogout = 8 };
+	enum enMainMenuOptions { enShowClientsList = 1, enAddNewClient = 2, enDeleteClient = 3, enUpdateClient = 4, enFindClient = 5, enTransactions = 6, enManageUsers = 7, enLoginRegister, enLogout = 9 };
 
 
 
 	static short _ReadMainMenuOption()
 	{
-		short Option = clsInputValidate::ReadNumberBetween(1, 8, "Invalid Input, Enter A Number Between 1 And 8: ");
+		short Option = clsInputValidate::ReadNumberBetween(1, 9, "Invalid Input, Enter A Number Between 1 And 9: ");
 		return Option;
 	}
 
@@ -69,6 +70,11 @@ private:
 	static void _ShowManageUsersMenuScreen()
 	{
 		clsManageUsersMenuScreen::ShowManageUsersMenuScreen();
+	}
+
+	static void _ShowLoginRegisterScreen()
+	{
+		clsLoginRegisterScreen::ShowLoginRegisterScreen();
 	}
 
 	static void _Logout()
@@ -132,6 +138,13 @@ private:
 				break;
 			}
 
+			case enLoginRegister:
+			{
+				_ShowLoginRegisterScreen();
+				_GoBackToMainMenuScreen();
+				break;
+			}
+
 			case enLogout:
 			{
 				_Logout();
@@ -157,9 +170,10 @@ public:
 		cout << clsUtility::Tabs(6) << "  5) Find Client.\n";
 		cout << clsUtility::Tabs(6) << "  6) Transactions.\n";
 		cout << clsUtility::Tabs(6) << "  7) Manage Users.\n";
-		cout << clsUtility::Tabs(6) << "  8) Logout.\n";
+		cout << clsUtility::Tabs(6) << "  8) Login Register.\n";
+		cout << clsUtility::Tabs(6) << "  9) Logout.\n";
 		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 8)? ";
+		cout << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 9)? ";
 
 		_PerformMainMenuScreen((enMainMenuOptions)_ReadMainMenuOption());
 	}

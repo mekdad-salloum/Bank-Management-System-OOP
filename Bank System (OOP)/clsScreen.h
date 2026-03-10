@@ -24,6 +24,11 @@ protected:
 			cout << clsUtility::Tabs(7) << SubTitle << endl;
 
 		cout << clsUtility::Tabs(5) << "__________________________________________________\n\n";
+
+		cout << clsUtility::Tabs(5) << "User: " << clsGlobal::CurrentUser.FullName() << endl;
+		cout << clsUtility::Tabs(5) << "Date: " << clsDate::GetSystemDateTimeString() << endl;
+		cout << clsUtility::Tabs(5) << "__________________________________________________\n\n";
+
 	}
 	
 

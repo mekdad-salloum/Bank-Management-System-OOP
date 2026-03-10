@@ -9,17 +9,27 @@ class clsLoginScreen : protected clsScreen
 
 private:
 
-	static void _Login()
+	static bool _Login()
 	{
 		bool LoginFailed = false;
 		string UserName = "", Password = "";
+		short LoginFailedCounter = 3;
 
 		do
 		{
 			if (LoginFailed)
 			{
+				LoginFailedCounter--;
 				cout << "\n";
-				cout << clsUtility::Tabs(5) << "Invalid UserName/Password\n\n";
+				cout << clsUtility::Tabs(5) << "Invalid UserName/Password\n";
+				cout << clsUtility::Tabs(5) << "You Have " << LoginFailedCounter << " Trials To Login.\n\n";
+			}
+
+			if (LoginFailedCounter == 0)
+			{
+				cout << "\n";
+				cout << clsUtility::Tabs(5) << "You Are Locked After 3 Failed Trials.";
+				return false;
 			}
 
 			cout << clsUtility::Tabs(5) << "Enter UserName: ";
@@ -33,16 +43,21 @@ private:
 
 		} while (LoginFailed);
 
-		clsMainMenuScreen::ShowMainMenuScreen();
+		if (clsGlobal::CurrentUser.LoginRegister())
+		{
+			clsMainMenuScreen::ShowMainMenuScreen();
+			return true;
+		}
+	
 	}
 
 public:
 
-	static void ShowLoginScreen()
+	static bool ShowLoginScreen()
 	{
 		_DrawScreenHeader("Login Screen");
 
-		_Login();
+		return _Login();
 	}
 
 };

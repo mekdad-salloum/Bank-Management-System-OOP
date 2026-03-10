@@ -13,6 +13,16 @@ class clsUserUI
 
 public:
 
+	static void PrintLoginRegisterRecord(clsUser::strLoginRegisterRecord& Record)
+	{
+		cout << clsUtility::Tabs(2);
+		cout << "| " << setw(35) << left << Record.DateTime;
+		cout << "| " << setw(20) << left << Record.UserName;
+		cout << "| " << setw(20) << left << Record.Password;
+		cout << "| " << setw(10) << left << Record.Permissions;
+		cout << "\n";
+	}
+
 	static void PrintUserRecord(clsUser& User)
 	{
 		cout << clsUtility::Tabs(2);
@@ -132,6 +142,14 @@ public:
 			if (toupper(Answer) == 'Y')
 			{
 				Permissions += clsUser::pManageUsers;
+			}
+
+			cout << "Show Login Registers List? (Y/N)? ";
+			Answer = clsInputValidate::ReadChar();
+
+			if (toupper(Answer) == 'Y')
+			{
+				Permissions += clsUser::pLoginRegister;
 			}
 
 		}

@@ -128,5 +128,8 @@
     <ClInclude Include="clsGlobal.h">
       <Filter>Header Files\Classification</Filter>
     </ClInclude>
+    <ClInclude Include="clsLoginRegisterScreen.h">
+      <Filter>Header Files\Screens\Main Menu Screens</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
