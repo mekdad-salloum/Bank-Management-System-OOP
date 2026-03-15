@@ -170,7 +170,7 @@ public:
 		cout << clsUtility::Tabs(6) << "  5) Find Client.\n";
 		cout << clsUtility::Tabs(6) << "  6) Transactions.\n";
 		cout << clsUtility::Tabs(6) << "  7) Manage Users.\n";
-		cout << clsUtility::Tabs(6) << "  8) Login Register.\n";
+		cout << clsUtility::Tabs(6) << "  8) Login Registers.\n";
 		cout << clsUtility::Tabs(6) << "  9) Logout.\n";
 		cout << clsUtility::Tabs(5) << "==================================================\n";
 		cout << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 9)? ";

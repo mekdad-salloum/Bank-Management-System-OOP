@@ -154,6 +154,8 @@
     <ClInclude Include="clsString.h" />
     <ClInclude Include="clsTotalBalancesScreen.h" />
     <ClInclude Include="clsTransactionsMenuScreen.h" />
+    <ClInclude Include="clsTransferScreen.h" />
+    <ClInclude Include="clsTransfersLogScreen.h" />
     <ClInclude Include="clsUpdateClientScreen.h" />
     <ClInclude Include="clsUpdateUserScreen.h" />
     <ClInclude Include="clsUser.h" />
@@ -161,6 +163,7 @@
     <ClInclude Include="clsUserUI.h" />
     <ClInclude Include="clsUtility.h" />
     <ClInclude Include="clsWithdrawScreen.h" />
+    <ClInclude Include="InterfaceCommunication.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

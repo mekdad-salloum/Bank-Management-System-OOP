@@ -14,7 +14,7 @@ private:
 		cout << "\n";
 		while (!clsClient::IsClientExist(AccountNumber))
 		{
-			cout << "Account Number (" + AccountNumber + ") Is Not Found: Choose Another One: ";
+			cout << "Account Number (" + AccountNumber + ") Is Not Found, Choose Another One: ";
 			AccountNumber = clsInputValidate::ReadString();
 		}
 

@@ -13,6 +13,19 @@ class clsClientUI
 
 public:
 
+	static void PrintTransferLogRecord(clsClient::strTransferLogRecord& Record)
+	{
+		cout << clsUtility::Tabs(2);
+		cout << "| " << setw(25) << left << Record.DateTime;
+		cout << "| " << setw(15) << left << Record.SourceAccountNumber;
+		cout << "| " << setw(15) << left << Record.DestinationAccountNumber;
+		cout << "| " << setw(10) << left << Record.Amount;
+		cout << "| " << setw(10) << left << Record.SourceBalanceAfter;
+		cout << "| " << setw(10) << left << Record.DestinationBalanceAfter;
+		cout << "| " << setw(10) << left << Record.UserName;
+		cout << "\n";
+	}
+
 	static void PrintClientBalanceRecord(clsClient& Client)
 	{
 		cout << clsUtility::Tabs(3);
@@ -38,14 +51,14 @@ public:
 	{
 		cout << "\nClient Card:";
 		cout << "\n____________________________________";
-		cout << "\nFirstName   : " << Client.FirstName;
-		cout << "\nLastName    : " << Client.LastName;
-		cout << "\nFull Name   : " << Client.FullName();
-		cout << "\nEmail       : " << Client.Email;
-		cout << "\nPhone       : " << Client.Phone;
-		cout << "\nAcc. Number : " << Client.AccountNumber();
-		cout << "\nPassword    : " << Client.PinCode;
-		cout << "\nBalance     : " << Client.Balance;
+		cout << "\nFirstName      : " << Client.FirstName;
+		cout << "\nLastName       : " << Client.LastName;
+		cout << "\nFull Name      : " << Client.FullName();
+		cout << "\nEmail          : " << Client.Email;
+		cout << "\nPhone          : " << Client.Phone;
+		cout << "\nAccount Number : " << Client.AccountNumber();
+		cout << "\nPassword       : " << Client.PinCode;
+		cout << "\nBalance        : " << Client.Balance;
 		cout << "\n____________________________________\n";
 	}
 
