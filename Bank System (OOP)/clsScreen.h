@@ -5,6 +5,8 @@
 #include "clsInputValidate.h"
 #include "clsClientUI.h"
 #include "clsUserUI.h"
+#include "clsCurrencyUI.h"
+#include "clsCurrency.h"
 #include "clsGlobal.h"
 
 using namespace std;

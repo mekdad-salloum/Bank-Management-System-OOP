@@ -9,6 +9,7 @@
 #include "clsTransactionsMenuScreen.h"
 #include "clsManageUsersMenuScreen.h"
 #include "clsLoginRegisterScreen.h"
+#include "clsCurrencyExchangeScreen.h"
 #include "clsGlobal.h"
 
 using namespace std;
@@ -18,13 +19,13 @@ class clsMainMenuScreen : protected clsScreen
 
 private:
 
-	enum enMainMenuOptions { enShowClientsList = 1, enAddNewClient = 2, enDeleteClient = 3, enUpdateClient = 4, enFindClient = 5, enTransactions = 6, enManageUsers = 7, enLoginRegister, enLogout = 9 };
+	enum enMainMenuOptions { enShowClientsList = 1, enAddNewClient = 2, enDeleteClient = 3, enUpdateClient = 4, enFindClient = 5, enTransactions = 6, enManageUsers = 7, enLoginRegister = 8, enCurrencyExchange = 9, enLogout = 10 };
 
 
 
 	static short _ReadMainMenuOption()
 	{
-		short Option = clsInputValidate::ReadNumberBetween(1, 9, "Invalid Input, Enter A Number Between 1 And 9: ");
+		short Option = clsInputValidate::ReadNumberBetween(1, 10, "Invalid Input, Enter A Number Between 1 And 10: ");
 		return Option;
 	}
 
@@ -76,6 +77,12 @@ private:
 	{
 		clsLoginRegisterScreen::ShowLoginRegisterScreen();
 	}
+
+	static void _ShowCurrencyExchangeScreen()
+	{
+		clsCurrencyExchangeScreen::ShowCurrencyExchangeScreen();
+	}
+
 
 	static void _Logout()
 	{
@@ -145,6 +152,13 @@ private:
 				break;
 			}
 
+			case enCurrencyExchange:
+			{
+				_ShowCurrencyExchangeScreen();
+				_GoBackToMainMenuScreen();
+				break;
+			}
+
 			case enLogout:
 			{
 				_Logout();
@@ -171,9 +185,10 @@ public:
 		cout << clsUtility::Tabs(6) << "  6) Transactions.\n";
 		cout << clsUtility::Tabs(6) << "  7) Manage Users.\n";
 		cout << clsUtility::Tabs(6) << "  8) Login Registers.\n";
-		cout << clsUtility::Tabs(6) << "  9) Logout.\n";
+		cout << clsUtility::Tabs(6) << "  9) Currency Exchange.\n";
+		cout << clsUtility::Tabs(6) << "  10) Logout.\n";
 		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 9)? ";
+		cout << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 10)? ";
 
 		_PerformMainMenuScreen((enMainMenuOptions)_ReadMainMenuOption());
 	}
