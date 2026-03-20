@@ -136,6 +136,7 @@
     <ClInclude Include="clsClient.h" />
     <ClInclude Include="clsClientUI.h" />
     <ClInclude Include="clsClientsListScreen.h" />
+    <ClInclude Include="clsColor.h" />
     <ClInclude Include="clsCurrenciesListScreen.h" />
     <ClInclude Include="clsCurrency.h" />
     <ClInclude Include="clsCurrencyCalculatorScreen.h" />

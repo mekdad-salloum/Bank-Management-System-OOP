@@ -9,7 +9,7 @@ class clsUtility
 {
 
 public:
-    
+   
     enum enCharType { SamallLetter = 1, CapitalLetter = 2, Digit = 3, SpecialCharacter = 4, MixCharacter = 5 };
 
     static void Srand()

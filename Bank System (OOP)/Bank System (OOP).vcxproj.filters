@@ -164,5 +164,8 @@
     <ClInclude Include="clsCurrencyCalculatorScreen.h">
       <Filter>Header Files\Screens\Currency Exchange Screens</Filter>
     </ClInclude>
+    <ClInclude Include="clsColor.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
