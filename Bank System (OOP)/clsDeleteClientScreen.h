@@ -7,13 +7,14 @@ private:
 
 	static void _DeleteClient()
 	{
-		cout << "Enter Client Account Number: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "Enter Client Account Number: ";
 		string AccountNumber = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (!clsClient::IsClientExist(AccountNumber))
 		{
-			cout << "Account Number Is Not Found: Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "Account Number Is Not Found: Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			AccountNumber = clsInputValidate::ReadString();
 		}
 
@@ -21,26 +22,26 @@ private:
 		clsClientUI::PrintClientCard(Client);
 
 		char Answer = 'N';
-		cout << "\nAre You Sure You Want To Delete This Client? (Y/N) ";
+		cout << clsColor::ColorRGB(clsColor::White) << "\nAre You Sure You Want To Delete This Client? (Y/N) ";
 		cin >> Answer;
 
 		if (toupper(Answer) == 'Y')
 		{
 			if (Client.Delete())
 			{
-				cout << "\nClient Deleted Successfully :-)\n";
+				cout << clsColor::ColorRGB(clsColor::Green) << "\nClient Deleted Successfully :-)\n";
 				clsClientUI::PrintClientCard(Client);
 			}
 
 			else
 			{
-				cout << "\nError, Account Was Not Deleted :-(\n";
+				cout << clsColor::ColorRGB(clsColor::Red) << "\nError, Account Was Not Deleted :-(\n";
 			}
 		}
 
 		else
 		{
-			cout << "\nOperation Was Cancelled.\n";
+			cout << clsColor::ColorRGB(clsColor::White) << "\nOperation Was Cancelled.\n";
 		}
 	}
 

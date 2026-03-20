@@ -11,27 +11,32 @@ private:
 		clsCurrency Currency = clsCurrencyUI::GetCurrency("Enter Currency Code: ");
 		clsCurrencyUI::PrintCurrencyCard(Currency);
 
-		cout << "\nAre You Sure You Want To Update The Rate Of This Currency? (Y/N) ";
+		cout << clsColor::ColorRGB(clsColor::White) << "\nAre You Sure You Want To Update The Rate Of This Currency? (Y/N) ";
 		char Answer = 'N';
 		cin >> Answer;
 
 		if (toupper(Answer) == 'Y')
 		{
-			cout << "\nUpdate Currency Rate:";
-			cout << "\n________________________\n";
-			cout << "\nEnter New Rate: ";
+			cout << clsColor::ColorRGB(clsColor::Cyan) << "\nUpdate Currency Rate:";
+			cout << clsColor::ColorRGB(clsColor::Magenta) << "\n________________________\n";
+			cout << clsColor::ColorRGB(clsColor::Yellow) << "\nEnter New Rate: ";
 			Currency.Rate = clsInputValidate::ReadPositiveNumber<double>();
 
 			if (Currency.Save())
 			{
-				cout << "\nCurrency Updated Successfully :-)\n";
+				cout << clsColor::ColorRGB(clsColor::Green) << "\nCurrency Updated Successfully :-)\n";
 				clsCurrencyUI::PrintCurrencyCard(Currency);
+			}
+
+			else
+			{
+				cout << clsColor::ColorRGB(clsColor::Red) << "\nError Currency Was Not Saved :-(\n";
 			}
 		}
 
 		else
 		{
-			cout << "\nOperation Was Cancelled\n";
+			cout << clsColor::ColorRGB(clsColor::White) << "\nOperation Was Cancelled\n";
 		}
 	}
 

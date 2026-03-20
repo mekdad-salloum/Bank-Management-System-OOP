@@ -11,17 +11,17 @@ public:
 
 		_DrawScreenHeader("Balances List Screen", "   (" + to_string(Clients.size()) + ") Client(s).");
 
-		cout << clsUtility::Tabs(3) << "_________________________________________________________________________________\n\n";
-		cout << clsUtility::Tabs(3);
+		cout << clsColor::ColorRGB(clsColor::Red) << clsUtility::Tabs(3) << "_________________________________________________________________________________\n\n";
+		cout << clsColor::ColorRGB(clsColor::Magenta) << clsUtility::Tabs(3);
 		cout << "| " << setw(15) << left << "Account Number";
 		cout << "| " << setw(40) << left << "Client Name";
 		cout << "| " << setw(12) << left << "Balance\n";
-		cout << clsUtility::Tabs(3) << "_________________________________________________________________________________\n\n";
+		cout << clsColor::ColorRGB(clsColor::Red) << clsUtility::Tabs(3) << "_________________________________________________________________________________\n\n";
 
 		double TotalBalances = clsClient::GetTotalBalances();
 
 		if (Clients.size() == 0)
-			cout << "\t\t\t\tNo Clients Available In the System!";
+			cout << clsColor::ColorRGB(clsColor::Lime) << "\t\t\t\tNo Clients Available In the System!";
 
 		else
 		{
@@ -31,10 +31,10 @@ public:
 			}
 		}
 
-		cout << clsUtility::Tabs(3) << "_________________________________________________________________________________\n\n";
+		cout << clsColor::ColorRGB(clsColor::Red) << clsUtility::Tabs(3) << "_________________________________________________________________________________\n\n";
 
-		cout << clsUtility::Tabs(7) << "Total Balances = " << TotalBalances << "\n";
-		cout << clsUtility::Tabs(6) << "( " << clsUtility::NumberToText(TotalBalances) << ")\n";
+		cout << clsColor::ColorRGB(clsColor::Salmon) << clsUtility::Tabs(7) << "Total Balances = " << clsColor::ColorRGB(clsColor::Green) << TotalBalances << "\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "( " << clsUtility::NumberToText(TotalBalances) << ")\n";
 	}
 
 

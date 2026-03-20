@@ -23,7 +23,7 @@ private:
 	static void _GoBackToCurrencyExchangeMenuScreen()
 	{
 		cout << "\n";
-		cout << clsUtility::Tabs(5) << "Press Any Key To Go Back To Currency Exchange Menu....";
+		cout << clsColor::ColorRGB(clsColor::DodgerBlue) << clsUtility::Tabs(5) << "Press Any Key To Go Back To Currency Exchange Menu....";
 		system("pause>0");
 		ShowCurrencyExchangeScreen();
 	}
@@ -95,16 +95,16 @@ public:
 	{
 		_DrawScreenHeader("Currency Exchange Screen");
 
-		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(7) << "Currency Exchange Menu\n";
-		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(6) << "  1) Show Currencies List.\n";
-		cout << clsUtility::Tabs(6) << "  2) Find Currency.\n";
-		cout << clsUtility::Tabs(6) << "  3) Update Currency Rate.\n";
-		cout << clsUtility::Tabs(6) << "  4) Currency Calculator.\n";
-		cout << clsUtility::Tabs(6) << "  5) Main Menu.\n";
-		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 5)? ";
+		cout << clsColor::ColorRGB(clsColor::BrightGreen) << clsUtility::Tabs(5) << "==================================================\n";
+		cout << clsColor::ColorRGB(clsColor::Green) << clsUtility::Tabs(7) << "Currency Exchange Menu\n";
+		cout << clsColor::ColorRGB(clsColor::BrightGreen) << clsUtility::Tabs(5) << "==================================================\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  1) " << clsColor::ColorRGB(clsColor::Cyan) << "Show Currencies List.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  2) " << clsColor::ColorRGB(clsColor::Cyan) << "Find Currency.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  3) " << clsColor::ColorRGB(clsColor::Cyan) << "Update Currency Rate.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  4) " << clsColor::ColorRGB(clsColor::Cyan) << "Currency Calculator.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  5) " << clsColor::ColorRGB(clsColor::Cyan) << "Main Menu.\n";
+		cout << clsColor::ColorRGB(clsColor::BrightGreen) << clsUtility::Tabs(5) << "==================================================\n";
+		cout << clsColor::ColorRGB(clsColor::Magenta) << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 5)? ";
 
 		_PerformMainMenuScreen((enCurrencyExxchangeMenuOptions)_ReadCurrencyExchangeMenuOption());
 	}

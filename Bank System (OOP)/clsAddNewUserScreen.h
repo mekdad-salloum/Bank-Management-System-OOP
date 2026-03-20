@@ -6,13 +6,14 @@ private:
 
 	static void _AddNewUser()
 	{
-		cout << "Enter UserName: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "Enter UserName: ";
 		string UserName = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (clsUser::IsUserExist(UserName))
 		{
-			cout << "UserName Is Already Used, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "UserName Is Already Used, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			UserName = clsInputValidate::ReadString();
 		}
 
@@ -21,13 +22,13 @@ private:
 
 		if (User.Save())
 		{
-			cout << "\nUser Added Successfully :-)\n";
+			cout << clsColor::ColorRGB(clsColor::Green) << "\nUser Added Successfully :-)\n";
 			clsUserUI::PrintUserCard(User);
 		}
 
 		else
 		{
-			cout << "\nError Account Was Not Saved :-(\n";
+			cout << clsColor::ColorRGB(clsColor::Red) << "\nError Account Was Not Saved :-(\n";
 		}
 	}
 

@@ -8,43 +8,48 @@ private:
 
 	static void _Transfer()
 	{
-		cout << "Enter Account Number To Transfer From: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "Enter Account Number To Transfer From: ";
 		string FromAccountNumber = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (!clsClient::IsClientExist(FromAccountNumber))
 		{
-			cout << "Account Number (" + FromAccountNumber + ") Is Not Found, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "Account Number (" + FromAccountNumber + ") Is Not Found, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			FromAccountNumber = clsInputValidate::ReadString();
 		}
 
 		clsClient Client1 = clsClient::Find(FromAccountNumber);
 		clsClientUI::PrintClientCard(Client1);
 
-		cout << "\nEnter Account Number To Transfer To: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "\nEnter Account Number To Transfer To: ";
 		string ToAccountNumber = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (!clsClient::IsClientExist(ToAccountNumber) || ToAccountNumber == FromAccountNumber)
 		{
-			cout << "Account Number (" + ToAccountNumber + ") Is Not Found, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "Account Number (" + ToAccountNumber + ") Is Not Found, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			ToAccountNumber = clsInputValidate::ReadString();
 		}
 
 		clsClient Client2 = clsClient::Find(ToAccountNumber);
 		clsClientUI::PrintClientCard(Client2);
 
-		cout << "\nEnter Transfer Amount: ";
+		cout << clsColor::ColorRGB(clsColor::LemonYellow) << "\nEnter Transfer Amount: ";
+		cout << clsColor::ColorRGB(clsColor::Gold);
 		double Amount = clsInputValidate::ReadNumber<double>();
 
 		cout << "\n";
 		while (Client1.Balance < Amount)
 		{
-			cout << "Amount Exceeds The Available Balance, Enter Another Amount: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "Amount Exceeds The Available Balance, Enter Another Amount: ";
+			cout << clsColor::ColorRGB(clsColor::Gold);
 			Amount = clsInputValidate::ReadNumber<double>();
 		}
 
 		char Answer = 'N';
+		cout << clsColor::ColorRGB(clsColor::DodgerBlue);
 		cout << "\nAre You Sure You Want To Perform This Operaation? (Y/N) ";
 		cin >> Answer;
 
@@ -52,7 +57,7 @@ private:
 		{
 			if (Client1.Transfer(Amount, Client2, clsGlobal::CurrentUser.UserName))
 			{
-				cout << "\nTransfer Done Successfully." << endl;
+				cout << clsColor::ColorRGB(clsColor::Green) << "\nTransfer Done Successfully." << endl;
 				clsClientUI::PrintClientCard(Client1);
 				clsClientUI::PrintClientCard(Client2);
 
@@ -60,13 +65,13 @@ private:
 
 			else
 			{
-				cout << "\nError, Try Again...\n";
+				cout << clsColor::ColorRGB(clsColor::Red) << "\nError, Try Again...\n";
 			}
 		}
 
 		else
 		{
-			cout << "\nOperation Was Cancelled.\n";
+			cout << clsColor::ColorRGB(clsColor::White) << "\nOperation Was Cancelled.\n";
 		}
 	}
 

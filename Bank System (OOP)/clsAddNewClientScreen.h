@@ -6,13 +6,14 @@ private:
 
 	static void _AddNewClient()
 	{
-		cout << "Enter Account Number: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "Enter Account Number: ";
 		string AccountNumber = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (clsClient::IsClientExist(AccountNumber))
 		{
-			cout << "Account Number Is Already Used, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "Account Number Is Already Used, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			AccountNumber = clsInputValidate::ReadString();
 		}
 
@@ -21,13 +22,13 @@ private:
 
 		if (Client.Save())
 		{
-			cout << "\nClient Added Successfully :-)\n";
+			cout << clsColor::ColorRGB(clsColor::Green) << "\nClient Added Successfully :-)\n";
 			clsClientUI::PrintClientCard(Client);
 		}
 
 		else
 		{
-			cout << "\nError Account Was Not Saved :-(\n";
+			cout << clsColor::ColorRGB(clsColor::Red) << "\nError Account Was Not Saved :-(\n";
 		}
 	}
 

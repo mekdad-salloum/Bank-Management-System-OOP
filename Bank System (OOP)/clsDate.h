@@ -132,6 +132,43 @@ public:
 			+ ":" + to_string(Second));
 	}
 
+	static string GetDateAndTimeNow()
+	{
+		time_t Now = time(0);
+		tm LocalTime;
+
+		localtime_s(&LocalTime, &Now);
+
+		int Day = LocalTime.tm_mday;
+		int Month = LocalTime.tm_mon + 1;
+		int Year = LocalTime.tm_year + 1900;
+
+		int Hour = LocalTime.tm_hour;
+		int Min = LocalTime.tm_min;
+
+		string Period = "AM";
+
+		if (Hour >= 12)
+		{
+			Period = "PM";
+			if (Hour > 12)
+				Hour -= 12;
+		}
+
+		if (Hour == 0)
+			Hour = 12;
+
+		string DateTimeString =
+			to_string(Day) + "/" +
+			to_string(Month) + "/" +
+			to_string(Year) + " - " +
+			to_string(Hour) + ":" +
+			(Min < 10 ? "0" : "") + to_string(Min) + " " +
+			Period;
+
+		return DateTimeString;
+	}
+
 
 	static	bool IsValidDate(clsDate Date)
 	{

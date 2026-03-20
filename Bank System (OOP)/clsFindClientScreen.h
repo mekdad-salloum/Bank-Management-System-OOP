@@ -7,13 +7,14 @@ private:
 
 	static void _FindClient()
 	{
-		cout << "Enter Client Account Number: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "Enter Client Account Number: ";
 		string AccountNumber = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (!clsClient::IsClientExist(AccountNumber))
 		{
-			cout << "Account Number Is Not Found: Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "Account Number Is Not Found: Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			AccountNumber = clsInputValidate::ReadString();
 		}
 
@@ -21,11 +22,11 @@ private:
 
 		if (!Client.IsEmpty())
 		{
-			cout << "\nClient Found :-)\n";
+			cout << clsColor::ColorRGB(clsColor::Green) << "\nClient Found :-)\n";
 		}
 		else
 		{
-			cout << "\nClient Was not Found :-(\n";
+			cout << clsColor::ColorRGB(clsColor::Red) << "\nClient Was not Found :-(\n";
 		}
 
 		clsClientUI::PrintClientCard(Client);

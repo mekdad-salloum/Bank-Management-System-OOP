@@ -7,13 +7,14 @@ private:
 
 	static void _FindUser()
 	{
-		cout << "Enter User UserName: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "Enter User UserName: ";
 		string UserName = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (!clsUser::IsUserExist(UserName))
 		{
-			cout << "UserName Is Not Found: Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "UserName Is Not Found: Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			UserName = clsInputValidate::ReadString();
 		}
 
@@ -21,11 +22,11 @@ private:
 
 		if (!User.IsEmpty())
 		{
-			cout << "\nUser Found :-)\n";
+			cout << clsColor::ColorRGB(clsColor::Green) << "\nUser Found :-)\n";
 		}
 		else
 		{
-			cout << "\nUser Was not Found :-(\n";
+			cout << clsColor::ColorRGB(clsColor::Red) << "\nUser Was not Found :-(\n";
 		}
 
 		clsUserUI::PrintUserCard(User);

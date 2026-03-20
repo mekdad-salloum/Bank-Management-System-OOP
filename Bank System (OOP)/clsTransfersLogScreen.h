@@ -12,19 +12,19 @@ public:
 
 		_DrawScreenHeader("Transfers Log List Screen", "   (" + to_string(vTransfersLogRecords.size()) + ") Record(s).");
 
-		cout << clsUtility::Tabs(2) << "___________________________________________________________________________________________________________\n\n";
+		cout << clsColor::ColorRGB(clsColor::LemonYellow) << clsUtility::Tabs(2) << "___________________________________________________________________________________________________________\n\n";
 		cout << clsUtility::Tabs(2);
-		cout << "| " << setw(25) << left << "Date - Time";
-		cout << "| " << setw(15) << left << "S.AccNum";
-		cout << "| " << setw(15) << left << "D.AccNum";
-		cout << "| " << setw(10) << left << "Amount";
-		cout << "| " << setw(10) << left << "S.Balance";
-		cout << "| " << setw(10) << left << "D.Balance";
-		cout << "| " << setw(10) << left << "UserName\n";
-		cout << clsUtility::Tabs(2) << "___________________________________________________________________________________________________________\n\n";
+		cout << clsColor::ColorRGB(clsColor::Cyan) << "| " << setw(25) << left << "Date - Time";
+		cout << clsColor::ColorRGB(clsColor::Red) << "| " << setw(15) << left << "S.AccNum";
+		cout << clsColor::ColorRGB(clsColor::Green) << "| " << setw(15) << left << "D.AccNum";
+		cout << clsColor::ColorRGB(clsColor::Magenta) << "| " << setw(10) << left << "Amount";
+		cout << clsColor::ColorRGB(clsColor::Red) << "| " << setw(10) << left << "S.Balance";
+		cout << clsColor::ColorRGB(clsColor::Green) << "| " << setw(10) << left << "D.Balance";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "| " << setw(10) << left << "UserName\n";
+		cout << clsColor::ColorRGB(clsColor::LemonYellow) << clsUtility::Tabs(2) << "___________________________________________________________________________________________________________\n\n";
 
 		if (vTransfersLogRecords.size() == 0)
-			cout << clsUtility::Tabs(6) << "No Records Available In the System!";
+			cout << clsColor::ColorRGB(clsColor::Lime) << clsUtility::Tabs(6) << "No Records Available In the System!";
 
 		else
 		{
@@ -35,6 +35,6 @@ public:
 		}
 
 
-		cout << clsUtility::Tabs(2) << "___________________________________________________________________________________________________________\n";
+		cout << clsColor::ColorRGB(clsColor::LemonYellow) << clsUtility::Tabs(2) << "___________________________________________________________________________________________________________\n";
 	}
 };

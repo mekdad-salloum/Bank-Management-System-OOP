@@ -23,7 +23,7 @@ private:
 	static void _GoBackToManageUsersMenuScreen()
 	{
 		cout << "\n";
-		cout << clsUtility::Tabs(5) << "Press Any Key To Go Back To Manage Users Menu....";
+		cout << clsColor::ColorRGB(clsColor::DodgerBlue) << clsUtility::Tabs(5) << "Press Any Key To Go Back To Manage Users Menu....";
 		system("pause>0");
 		ShowManageUsersMenuScreen();
 	}
@@ -113,17 +113,17 @@ public:
 
 		_DrawScreenHeader("Manage Users Menu Screen");
 
-		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(7) << "Manage Users Menu\n";
-		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(7) << "1) Show Users List.\n";
-		cout << clsUtility::Tabs(7) << "2) Add New User.\n";
-		cout << clsUtility::Tabs(7) << "3) Delete User.\n";
-		cout << clsUtility::Tabs(7) << "4) Update User.\n";
-		cout << clsUtility::Tabs(7) << "5) Find User.\n";
-		cout << clsUtility::Tabs(7) << "6) Main Menu.\n";
-		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 6)? ";
+		cout << clsColor::ColorRGB(clsColor::BrightGreen) << clsUtility::Tabs(5) << "==================================================\n";
+		cout << clsColor::ColorRGB(clsColor::Green) << clsUtility::Tabs(7) << "Manage Users Menu\n";
+		cout << clsColor::ColorRGB(clsColor::BrightGreen) << clsUtility::Tabs(5) << "==================================================\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(7) << "1) " << clsColor::ColorRGB(clsColor::Cyan) << "Show Users List.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(7) << "2) " << clsColor::ColorRGB(clsColor::Cyan) << "Add New User.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(7) << "3) " << clsColor::ColorRGB(clsColor::Cyan) << "Delete User.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(7) << "4) " << clsColor::ColorRGB(clsColor::Cyan) << "Update User.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(7) << "5) " << clsColor::ColorRGB(clsColor::Cyan) << "Find User.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(7) << "6) " << clsColor::ColorRGB(clsColor::Cyan) << "Main Menu.\n";
+		cout << clsColor::ColorRGB(clsColor::BrightGreen) << clsUtility::Tabs(5) << "==================================================\n";
+		cout << clsColor::ColorRGB(clsColor::Magenta) << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 6)? ";
 
 		_PerformManageUsersMenuScreen((enManageUsersMenuOptions)_ReadManageUsersMenuOption());
 	}

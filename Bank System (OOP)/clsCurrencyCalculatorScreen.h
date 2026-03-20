@@ -11,16 +11,16 @@ private:
 		clsCurrencyUI::PrintCurrencyCard(CurrencyFrom, "Convert From");
 
 		float AmountInUSD = CurrencyFrom.ConvertToUSD(Amount);
-		cout << "\n" << Amount << " " << CurrencyFrom.CurrencyCode() << " = " << AmountInUSD << " " << "USD\n";
+		cout << clsColor::ColorRGB(clsColor::Green) << "\n" << Amount << " " << clsColor::ColorRGB(clsColor::Red) << CurrencyFrom.CurrencyCode() << clsColor::ColorRGB(clsColor::Gold) << " = " << clsColor::ColorRGB(clsColor::Green) << AmountInUSD << " " << clsColor::ColorRGB(clsColor::Red) << "USD\n";
 
 		if (CurrencyTo.CurrencyCode() == "USD")
 			return;
 
-		cout << "\nConverting From USD To:\n";
+		cout << clsColor::ColorRGB(clsColor::DodgerBlue) << "\nConverting From USD To:\n";
 		clsCurrencyUI::PrintCurrencyCard(CurrencyTo, "Convert To");
 
 		float AmountInCurrency2 = CurrencyFrom.ConvertToOtherCurrency(Amount, CurrencyTo);
-		cout << "\n" << Amount << " " << CurrencyFrom.CurrencyCode() << " = " << AmountInCurrency2 << " " << CurrencyTo.CurrencyCode() << "\n";
+		cout << clsColor::ColorRGB(clsColor::Green) << "\n" << Amount << " " << clsColor::ColorRGB(clsColor::Red) << CurrencyFrom.CurrencyCode() << clsColor::ColorRGB(clsColor::Gold) << " = " << clsColor::ColorRGB(clsColor::Green) << AmountInCurrency2 << " " << clsColor::ColorRGB(clsColor::Red) << CurrencyTo.CurrencyCode() << "\n";
 	}
 
 	static void _CurrencyCalculator()
@@ -28,7 +28,8 @@ private:
 		clsCurrency CurrencyFrom = clsCurrencyUI::GetCurrency("Enter Currency1 Code: ");
 		clsCurrency CurrencyTo = clsCurrencyUI::GetCurrency("Enter Currency2 Code: ");
 
-		cout << "Enter Amount To Exchange: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "\nEnter Amount To Exchange: ";
+		cout << clsColor::ColorRGB(clsColor::White);
 		float Amount = clsInputValidate::ReadPositiveNumber<float>();
 
 		_PrintCalculationResult(Amount, CurrencyFrom, CurrencyTo);

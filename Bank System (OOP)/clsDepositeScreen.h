@@ -8,23 +8,26 @@ private:
 
 	static void _Deposite()
 	{
-		cout << "Enter Client Account Number: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "Enter Client Account Number: ";
 		string AccountNumber = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (!clsClient::IsClientExist(AccountNumber))
 		{
-			cout << "Account Number (" + AccountNumber + ") Is Not Found, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "Account Number (" + AccountNumber + ") Is Not Found, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			AccountNumber = clsInputValidate::ReadString();
 		}
 
 		clsClient Client = clsClient::Find(AccountNumber);
 		clsClientUI::PrintClientCard(Client);
 
-		cout << "\nEnter Deposite Amount: ";
+		cout << clsColor::ColorRGB(clsColor::LemonYellow) << "\nEnter Deposite Amount: ";
+		cout << clsColor::ColorRGB(clsColor::Gold);
 		double Amount = clsInputValidate::ReadPositiveNumber<double>();
 
 		char Answer = 'N';
+		cout << clsColor::ColorRGB(clsColor::DodgerBlue);
 		cout << "\nAre You Sure You Want To Perform This Transactions? (Y/N) ";
 		cin >> Answer;
 
@@ -32,18 +35,18 @@ private:
 		{
 			if (Client.Deposite(Amount))
 			{
-				cout << "\nAmount Deposited Successfully, New Balance Is: " << Client.Balance << endl;
+				cout << clsColor::ColorRGB(clsColor::Green) << "\nAmount Deposited Successfully, New Balance Is: " << clsColor::ColorRGB(clsColor::Gold) << Client.Balance << endl;
 			}
 
 			else
 			{
-				cout << "\nError, Failed.\n";
+				cout << clsColor::ColorRGB(clsColor::Red) << "\nError, Failed.\n";
 			}
 		}
 
 		else
 		{
-			cout << "\nOperation Was Cancelled.\n";
+			cout << clsColor::ColorRGB(clsColor::White) << "\nOperation Was Cancelled.\n";
 		}
 	}
 

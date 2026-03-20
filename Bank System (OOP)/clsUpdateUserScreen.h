@@ -7,13 +7,14 @@ private:
 
 	static void _UpdateUser()
 	{
-		cout << "Enter User UserName: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "Enter User UserName: ";
 		string UserName = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (!clsUser::IsUserExist(UserName))
 		{
-			cout << "UserName Is Not Found: Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "UserName Is Not Found: Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			UserName = clsInputValidate::ReadString();
 		}
 
@@ -21,30 +22,30 @@ private:
 		clsUserUI::PrintUserCard(User);
 
 		char Answer = 'N';
-		cout << "\nAre You Sure You Want To Update This User? (Y/N) ";
+		cout << clsColor::ColorRGB(clsColor::White) << "\nAre You Sure You Want To Update This User? (Y/N) ";
 		cin >> Answer;
 
 		if (toupper(Answer) == 'Y')
 		{
-			cout << "\n\nUpdate User Info:";
-			cout << "\n_____________________\n";
+			cout << clsColor::ColorRGB(clsColor::Cyan) << "\n\nUpdate User Info:";
+			cout << clsColor::ColorRGB(clsColor::Magenta) << "\n_____________________\n";
 			clsUserUI::ReadUserInfo(User);
 
 			if (User.Save())
 			{
-				cout << "\nUser Updated Successfully :-)\n";
+				cout << clsColor::ColorRGB(clsColor::Green) << "\nUser Updated Successfully :-)\n";
 				clsUserUI::PrintUserCard(User);
 			}
 
 			else
 			{
-				cout << "\nError Account Was Not Saved :-(\n";
+				cout << clsColor::ColorRGB(clsColor::Red) << "\nError Account Was Not Saved :-(\n";
 			}
 		}
 
 		else
 		{
-			cout << "\nOperation Was Cancelled.\n";
+			cout << clsColor::ColorRGB(clsColor::White) << "\nOperation Was Cancelled.\n";
 		}
 	}
 

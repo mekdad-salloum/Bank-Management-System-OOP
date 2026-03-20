@@ -32,7 +32,7 @@ private:
 	static void _GoBackToMainMenuScreen()
 	{
 		cout << "\n";
-		cout << clsUtility::Tabs(5) << "Press Any Key To Go Back To Main Menu....";
+		cout << clsColor::ColorRGB(clsColor::DodgerBlue) << clsUtility::Tabs(5) << "Press Any Key To Go Back To Main Menu....";
 		system("pause>0");
 		ShowMainMenuScreen();
 	}
@@ -174,21 +174,21 @@ public:
 	{
 		_DrawScreenHeader("Main Menu Screen");
 
-		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(7) << "Main Menu\n";
-		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(6) << "  1) Show Clients List.\n";
-		cout << clsUtility::Tabs(6) << "  2) Add New Client.\n";
-		cout << clsUtility::Tabs(6) << "  3) Delete Client.\n";
-		cout << clsUtility::Tabs(6) << "  4) Update Client.\n";
-		cout << clsUtility::Tabs(6) << "  5) Find Client.\n";
-		cout << clsUtility::Tabs(6) << "  6) Transactions.\n";
-		cout << clsUtility::Tabs(6) << "  7) Manage Users.\n";
-		cout << clsUtility::Tabs(6) << "  8) Login Registers.\n";
-		cout << clsUtility::Tabs(6) << "  9) Currency Exchange.\n";
-		cout << clsUtility::Tabs(6) << "  10) Logout.\n";
-		cout << clsUtility::Tabs(5) << "==================================================\n";
-		cout << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 10)? ";
+		cout << clsColor::ColorRGB(clsColor::BrightGreen) << clsUtility::Tabs(5) << "==================================================\n";
+		cout << clsColor::ColorRGB(clsColor::Green) << clsUtility::Tabs(7) << "Main Menu\n";
+		cout << clsColor::ColorRGB(clsColor::BrightGreen) << clsUtility::Tabs(5) << "==================================================\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  1) " << clsColor::ColorRGB(clsColor::Cyan) << "Show Clients List.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  2) " << clsColor::ColorRGB(clsColor::Cyan) << "Add New Client.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  3) " << clsColor::ColorRGB(clsColor::Cyan) << "Delete Client.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  4) " << clsColor::ColorRGB(clsColor::Cyan) << "Update Client.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  5) " << clsColor::ColorRGB(clsColor::Cyan) << "Find Client.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  6) " << clsColor::ColorRGB(clsColor::Cyan) << "Transactions.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  7) " << clsColor::ColorRGB(clsColor::Cyan) << "Manage Users.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  8) " << clsColor::ColorRGB(clsColor::Cyan) << "Login Registers.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  9) " << clsColor::ColorRGB(clsColor::Cyan) << "Currency Exchange.\n";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << clsUtility::Tabs(6) << "  10) " << clsColor::ColorRGB(clsColor::Cyan) << "Logout.\n";
+		cout << clsColor::ColorRGB(clsColor::BrightGreen) << clsUtility::Tabs(5) << "==================================================\n";
+		cout << clsColor::ColorRGB(clsColor::Magenta) << clsUtility::Tabs(5) << "Choose What Do You Want To Do? (1 To 10)? ";
 
 		_PerformMainMenuScreen((enMainMenuOptions)_ReadMainMenuOption());
 	}

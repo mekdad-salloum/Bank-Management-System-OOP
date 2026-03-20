@@ -8,23 +8,26 @@ private:
 
 	static void _Withdraw()
 	{
-		cout << "Enter Client Account Number: ";
+		cout << clsColor::ColorRGB(clsColor::Yellow) << "Enter Client Account Number: ";
 		string AccountNumber = clsInputValidate::ReadString();
 
 		cout << "\n";
 		while (!clsClient::IsClientExist(AccountNumber))
 		{
-			cout << "Account Number (" + AccountNumber + ") Is Not Found, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Red) << "Account Number (" + AccountNumber + ") Is Not Found, Choose Another One: ";
+			cout << clsColor::ColorRGB(clsColor::Yellow);
 			AccountNumber = clsInputValidate::ReadString();
 		}
 
 		clsClient Client = clsClient::Find(AccountNumber);
 		clsClientUI::PrintClientCard(Client);
 
-		cout << "\nEnter Withdraw Amount: ";
-		double Amount = clsInputValidate::ReadNumber<double>();
+		cout << clsColor::ColorRGB(clsColor::LemonYellow) << "\nEnter Withdraw Amount: ";
+		cout << clsColor::ColorRGB(clsColor::Gold);
+		double Amount = clsInputValidate::ReadPositiveNumber<double>();
 
 		char Answer = 'N';
+		cout << clsColor::ColorRGB(clsColor::DodgerBlue);
 		cout << "\nAre You Sure You Want To Perform This Transactions? (Y/N) ";
 		cin >> Answer;
 
@@ -32,20 +35,20 @@ private:
 		{
 			if (Client.Withdraw(Amount))
 			{
-				cout << "\nAmount Withdrew Successfully, New Balance Is: " << Client.Balance << endl;
+				cout << clsColor::ColorRGB(clsColor::Green) << "\nAmount Withdrew Successfully, New Balance Is: " << clsColor::ColorRGB(clsColor::Gold) << Client.Balance << endl;
 			}
 
 			else
 			{
-				cout << "\nCannot Withdraw, Insuffecient Balance!\n";
-				cout << "\nAmout To Withdraw is: " << Amount;
-				cout << "\nYour Balance Is: " << Client.Balance;
+				cout << clsColor::ColorRGB(clsColor::Red) << "\nCannot Withdraw, Insuffecient Balance!\n";
+				cout << clsColor::ColorRGB(clsColor::LemonYellow) << "\nAmout To Withdraw is: " << clsColor::ColorRGB(clsColor::Green) << Amount;
+				cout << clsColor::ColorRGB(clsColor::LemonYellow) << "\nYour Balance Is: " << clsColor::ColorRGB(clsColor::Green) << Client.Balance;
 			}
 		}
 
 		else
 		{
-			cout << "\nOperation Was Cancelled.\n";
+			cout << clsColor::ColorRGB(clsColor::White) << "\nOperation Was Cancelled.\n";
 		}
 	}
 
